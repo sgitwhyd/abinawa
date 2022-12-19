@@ -1,11 +1,15 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Detail from './pages/Detail';
+import Home from './pages/Home';
 
 function App() {
-	const [count, setCount] = useState(0);
-
-	return <div className='text-center text-blue-500'>hello worl</div>;
+	return (
+		<Routes>
+			<Route path='/' element={<Home />} />
+			<Route path='detail/:id' element={<Detail />} />
+		</Routes>
+	);
 }
 
 export default App;

@@ -9,7 +9,7 @@ const Home = () => {
 	const wayangDummy = [1, 2, 3];
 
 	return (
-		<Layout>
+		<Layout width={'700px'}>
 			<div className='w-full mx-auto text-center'>
 				<img src={Logo} className='w-16 h-16 mx-auto' alt='logo' />
 				<h3 className='text-2xl text-[#4A576F]'>Welcome to</h3>
@@ -29,22 +29,24 @@ const Home = () => {
 				<img src={DecorativeBar} className='w-full' alt='' />
 			</div>
 			{/* search wauang */}
-			<h4 className='text-lg text-center tracking-[0.19em] mt-9'>
-				Search Your Favorite Wayang
-			</h4>
-			<div className='grid grid-cols-1 mx-auto md:grid-cols-3 gap-4 mt-8'>
-				{wayangDummy.map((item, index) => {
-					return <Card key={index} wayang={Wayang} />;
-				})}
+			<div className='w-full flex flex-col'>
+				<h4 className='text-lg text-center tracking-[0.19em] mt-9'>
+					Search Your Favorite Wayang
+				</h4>
+				<div className='grid grid-cols-1 mx-auto md:grid-cols-3 gap-4 mt-8 justify-items-center'>
+					{wayangDummy.map((item, index) => {
+						return <Card key={index} id={index + 1} wayang={Wayang} />;
+					})}
+				</div>
+				<button
+					onClick={() => {}}
+					className='w-fit rounded-3xl px-5 py-3 text-white mx-auto mt-16 font-medium text-lg'
+					style={{
+						background: 'linear-gradient(73.19deg, #DC79FF 0%, #256BFA 95.06%)',
+					}}>
+					Show More
+				</button>
 			</div>
-			<button
-				onClick={() => {}}
-				className='w-fit rounded-3xl px-5 py-3 text-white mx-auto mt-16 font-medium text-lg'
-				style={{
-					background: 'linear-gradient(73.19deg, #DC79FF 0%, #256BFA 95.06%)',
-				}}>
-				Show More
-			</button>
 			<div className='mx-auto'>
 				<h2
 					className='font-bold text-[32px] mt-16'

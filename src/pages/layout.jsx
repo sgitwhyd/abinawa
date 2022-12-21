@@ -1,7 +1,7 @@
 import React from 'react';
 import AppBackgroundImg from '../assets/background.png';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, width, padding }) => {
 	return (
 		<div
 			className='w-full max-w-[1440px] mx-auto flex justify-center'
@@ -9,7 +9,12 @@ const Layout = ({ children }) => {
 				backgroundImage: `url(${AppBackgroundImg})`,
 				backgroundRepeat: 'no-repeat',
 			}}>
-			<div className='max-w-[700px] mx-auto pt-12 h-screen'>{children}</div>
+			<div
+				className={`max-w-[${width}] w-full mx-auto ${
+					padding ? padding : 'pt-12'
+				} h-screen`}>
+				{children}
+			</div>
 		</div>
 	);
 };

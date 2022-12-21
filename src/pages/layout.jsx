@@ -10,7 +10,7 @@ const Layout = ({ children, width, padding }) => {
 				backgroundRepeat: 'no-repeat',
 			}}>
 			<div
-				className={`max-w-[${width}] w-full mx-auto ${
+				className={`w-[${width}] mx-auto ${
 					padding ? padding : 'pt-12'
 				} h-screen`}>
 				{children}

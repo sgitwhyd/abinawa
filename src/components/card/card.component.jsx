@@ -12,7 +12,7 @@ const Card = (props) => {
 	const { images, category, name, origin } = wayangDummy;
 
 	return (
-		<a href={`detail/${props.id}`} className='w-56 h-64 mx-auto md:mx-0'>
+		<a href={`/detail/${props.id}`} className='w-56 h-64 mx-auto md:mx-0'>
 			<div className=' rounded-[18px] card-container py-3 cursor-pointer'>
 				<img src={images} alt='wayang' className='w-24 mx-auto' />
 				<div className='flex flex-col gap-[2px] px-3'>

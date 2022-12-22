@@ -35,7 +35,7 @@ const Detail = () => {
 				desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque odio placeat non fugit est quibusdam cumque excepturi, eligendi nesciunt esse ratione corrupti quisquam, id blanditiis ad nemo animi sapiente provident.',
 			},
 			{
-				type: 'cerita',
+				type: 'kisah',
 				name: 'Kresna',
 				icon: 'https://i.ibb.co/fQC7mvK/story.png',
 				desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque odio placeat non fugit est quibusdam cumque excepturi, eligendi nesciunt esse ratione corrupti quisquam, id blanditiis ad nemo animi sapiente provident.',

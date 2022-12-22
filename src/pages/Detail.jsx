@@ -3,11 +3,7 @@ import Layout from './layout';
 import { useParams } from 'react-router-dom';
 import DetailModal from '../components/modal/detail-modal.component';
 import Wayang from '../components/wayang/wayang.component';
-import LazyLoad from 'react-lazy-load';
-import Spline from '@splinetool/react-spline';
-
-import Sword from '../assets/sword.svg';
-import Play from '../assets/play.svg';
+import CardLoading from '../components/card-loading/card-loading.component';
 
 const Detail = () => {
 	const [visibleModal, setVisibleModal] = useState(false);
@@ -34,19 +30,19 @@ const Detail = () => {
 		addition: [
 			{
 				type: 'senjata',
-				icon: Sword,
+				icon: 'https://i.ibb.co/8rDHtYc/sword.png',
 				name: ' Cakra Sudarsana',
 				desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque odio placeat non fugit est quibusdam cumque excepturi, eligendi nesciunt esse ratione corrupti quisquam, id blanditiis ad nemo animi sapiente provident.',
 			},
 			{
 				type: 'cerita',
 				name: 'Kresna',
-				icon: Sword,
+				icon: 'https://i.ibb.co/fQC7mvK/story.png',
 				desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque odio placeat non fugit est quibusdam cumque excepturi, eligendi nesciunt esse ratione corrupti quisquam, id blanditiis ad nemo animi sapiente provident.',
 			},
 			{
 				type: 'video',
-				icon: Play,
+				icon: 'https://i.ibb.co/QQGYpd5/video.png',
 				name: ' Cakra Sudarsana',
 				videoUrl: 'https://www.youtube.com/embed/9um16c8M5dQ',
 			},
@@ -64,16 +60,8 @@ const Detail = () => {
 				<div className='flex gap-28 w-full mx-auto h-[522px] mt-10'>
 					<div className='w-5/12 bg-card-background rounded-[50px] shadow-xl'>
 						<div className='scale-75 flex justify-center items-center w-full h-full '>
-							<Spline
-								onLoad={() => setLoading(false)}
-								scene={object}
-								style={{
-									position: 'relative',
-									width: '100%',
-									height: '100%',
-								}}
-							/>
-							{loading && <p>Loading</p>}
+							<Wayang onLoadHandler={() => setLoading(false)} object={object} />
+							{loading && <CardLoading />}
 						</div>
 					</div>
 					<div className='flex flex-col w-6/12 pt-3'>
@@ -99,7 +87,11 @@ const Detail = () => {
 												desc: item.desc,
 											});
 										}}>
-										<img src={item.icon} className='w-14 h-14' alt='' />
+										<img
+											src={item.icon}
+											className='w-14 h-14'
+											alt={item.type}
+										/>
 									</div>
 								);
 							})}

@@ -3,7 +3,7 @@ import Layout from './layout';
 import Logo from '../assets/logo.png';
 import DecorativeBar from '../assets/decorative-bar.png';
 import Wayang from '../assets/kresna.png';
-import Card from '../components/Card.component';
+import Card from '../components/card/card.component';
 
 const Home = () => {
 	const wayangDummy = [1, 2, 3];

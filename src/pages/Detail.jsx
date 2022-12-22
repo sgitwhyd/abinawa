@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from './layout';
 import { useParams } from 'react-router-dom';
+import DetailModal from '../components/modal/detail-modal.component';
+
 import Sword from '../assets/sword.svg';
 import Play from '../assets/play.svg';
 
 const Detail = () => {
+	const [visibleModal, setVisibleModal] = useState(false);
 	const { id } = useParams();
+
+	const CloseDetailModal = () => {
+		setVisibleModal((prev) => !prev);
+	};
+
 	return (
 		<Layout padding='pt-8'>
 			<div className='w-[1240px]'>
@@ -29,7 +37,9 @@ const Detail = () => {
 						<div className='flex gap-[50px] mt-16'>
 							<div
 								className='rounded-[18px] flex justify-center items-center cursor-pointer bg-[#D9D9D9] w-[108px] h-[103px]'
-								onClick={() => {}}>
+								onClick={() => {
+									setVisibleModal((prev) => !prev);
+								}}>
 								<img src={Sword} className='w-14 h-14' alt='' />
 							</div>
 							<div
@@ -46,6 +56,9 @@ const Detail = () => {
 					</div>
 				</div>
 			</div>
+			{visibleModal ? (
+				<DetailModal onCloseModalHandler={CloseDetailModal} />
+			) : null}
 		</Layout>
 	);
 };

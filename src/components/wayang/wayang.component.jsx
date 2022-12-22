@@ -1,16 +1,19 @@
-import React, { Suspense } from 'react';
-
-const Spline = React.lazy(() => import('@splinetool/react-spline'));
+import React from 'react';
+import Spline from '@splinetool/react-spline';
 
 const Wayang = (props) => {
-	const { object } = props;
+	const { object, onLoadHandler } = props;
 
 	return (
-		<>
-			<Suspense fallback={<div>Loading...</div>}>
-				<Spline scene={object} />
-			</Suspense>
-		</>
+		<Spline
+			scene={object}
+			onLoad={onLoadHandler}
+			style={{
+				position: 'relative',
+				width: '100%',
+				height: '100%',
+			}}
+		/>
 	);
 };
 
